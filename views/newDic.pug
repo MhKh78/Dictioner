@@ -1,0 +1,14 @@
+extends base
+
+block content
+  main.main
+    .newDic-form
+      h2.heading-secondary.ma-bt-lg Enter A Name And Create Your New Dictoinary Now
+      form.form.form--newDic
+        .form__group.ma-bt-md
+          label.form__label(for='name') Dictionary Name
+          input#dicName.form__input(type='text', placeholder='Name', required)
+        .form__group
+          button.btn.btn--green Create New Dictionariy
+
+  //- script(src='/js/newDic.js')

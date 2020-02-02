@@ -1,0 +1,49 @@
+extends base
+include _reviewCard
+
+block append head
+  script(src='https://api.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js')
+  link(href='https://api.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet')
+
+mixin overviewBox(label, text, icon)
+  .overview-box__detail
+    svg.overview-box__icon
+      use(xlink:href=`/img/icons.svg#icon-${icon}`)
+    span.overview-box__label= label
+    span.overview-box__text= text
+
+
+block content
+  section.section-header
+    .header__hero
+      .header__hero-overlay &nbsp;
+
+    .heading-box
+      h1.heading-primary
+        span= `${dictionary.dicName} dictonary`
+  section.section-description.table_view.wordView
+      table.align__table.dictionary__sections
+        tbody
+          tr.th__tr
+            th.th__but.hidden.dictionary__name= dictionary.dicName
+            th#dictionary.th__but.hidden.dictionary__name= dictionary.slug
+            th#user.th__but.hidden.user__name= dictionary.user.slug
+          tr.th__tr
+            th.th__but Word
+            th.th__but Translation
+            th.th__but Delete
+            th.th__but Edit
+          tr.td__tr
+            td.dicTable__td.td__but
+                span.word_name= word.wordEng
+            td.dicTable__td.td__but
+                span= word.wordTrans
+            td.dicTable__td.button-align.td__but
+                button.dicTable__buton.btn.btn--small.btn--green.word__delete Delete
+            td.dicTable__td.button-align.td__but
+                button.dicTable__buton.btn.btn--small.btn--blue(onClick=`window.location.href='/dictionaries/${dictionary.slug}/${word.slug}&${dictionary.user.slug}'`) Edit
+
+
+  section.section-description.table_view.addwort_absol
+    div.addword.dictionary__sections
+      a.btn.btn--green.btn--animated--two(onClick=`window.history.back()`) Back To Dictionary

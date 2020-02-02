@@ -1,0 +1,41 @@
+<definitions name="HelloService" targetNamespace="http://www.examples.com/wsdl/HelloService.wsdl" 
+  xmlns="http://schemas.xmlsoap.org/wsdl/" 
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+  xmlns:tns="http://www.examples.com/wsdl/HelloService.wsdl" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <message name="getUpperRequest">
+    <part name="wordLower" type="xsd:string"/>
+  </message>
+
+  <message name="getUpperResponse">
+    <part name="wordUpper" type="xsd:string"/>
+  </message>
+
+  <portType name="Hello_PortType">
+    <operation name="upperize">
+      <input message="tns:getUpperRequest"/>
+      <output message="tns:getUpperResponse"/>
+    </operation>
+  </portType>
+
+  <binding name="Hello_Binding" type="tns:Hello_PortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="upperize">
+      <soap:operation soapAction="upperize"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:examples:helloservice" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:examples:helloservice" use="encoded"/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name="Upperizer_Service">
+    <documentation>WSDL File for HelloService</documentation>
+    <port binding="tns:Hello_Binding" name="Upperizer_Port">
+      <soap:address location="http://localhost:3030/upperizer/" />
+    </port>
+  </service>
+</definitions>

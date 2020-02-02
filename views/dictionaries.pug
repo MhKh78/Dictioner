@@ -1,0 +1,49 @@
+extend base
+
+mixin navItem(link, text, icon, active)
+  li(class=`${active ? 'side-nav--active' : ''}`)
+    a(href=`${link}`)
+      svg
+        use(xlink:href=`/img/icons.svg#icon-${icon}`)
+      | #{text}
+
+block content
+  main.main  
+    .user-view
+      nav.user-view__menu
+        ul.side-nav
+          +navItem('me', 'Settings', 'settings')
+          +navItem('dictionaries', 'My Dictionaries', 'briefcase', true)
+
+
+        - if(user.role === 'admin')
+          .admin-nav
+            h5.admin-nav__heading Admin
+            ul.side-nav
+              +navItem('#', ' Manage users', 'users')
+
+      .user-view__content.view__dictionaries
+        .user-view__form-container
+          h2.heading-secondary.ma-bt-md Your Dcitionaries
+
+        .form__group.align__table.div_dictionaries
+          if dictionaries.length !==0
+            table.form__label.dicTable.align__table
+              tabody
+                tr.dicTable__tr.th__tr
+                  th.dicTable__th.th__but Dictionaries
+                  th.dicTable__th.th__but Enter
+                  th.dicTable__th.th__but Delete
+                each dic in dictionaries
+                  tr.dicTable__tr.td__tr
+                      td.dicTable__td.td__but.dic__name= `${dic.dicName}`
+                      td.dicTable__td.td__but 
+                        button.dicTable__buton.btn.btn--small.btn--green(onClick=`window.location.href='/dictionaries/${dic.slug}'`) Enter
+                      td.dicTable__td.td__but
+                        button.dicTable__buton.btn.btn--small.btn--red(class = 'dictionaries__delete') Delete
+          else
+            h1 No Dictionary! Add Some...
+        .line &nbsp;
+        .user-view__form-container
+         .form__group.right
+              button.btn.btn--small.btn--green.btn--save-password(onClick="window.location.href = 'dictionaries/new';") Create New Dictionary

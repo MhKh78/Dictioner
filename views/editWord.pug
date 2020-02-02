@@ -1,0 +1,23 @@
+extends base
+
+block content
+  main.main
+    .edit__word
+      h2.heading-secondary.ma-bt-lg Edit The Word
+      form.form.form--newWord
+        .form__group.ma-bt-md.hidden--slug
+          label.form__label(for='name') Word Id
+          input#id.form__input(type='text', placeholder='Name', value=`${word._id}`, required)
+        .form__group.ma-bt-md.hidden--slug
+          label.form__label(for='name') Word Id
+          input#dic_slug.form__input(type='text', placeholder='Name', value=`${word.dictionary.slug}`, required)
+        .form__group.ma-bt-md
+          label.form__label(for='name') Word In English
+          input#wordEng.form__input(type='text', placeholder='Name' value=`${word.wordEng}`, required)
+        .form__group.ma-bt-md
+          label.form__label(for='name') Word In Persian
+          input#wordTrans.form__input(type='text', placeholder='Name' value=`${word.wordTrans}`, required)
+        .form__group
+          button.btn.btn--green Edit The Word
+
+  //- script(src='/js/newWord.js')

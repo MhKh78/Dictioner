@@ -1,0 +1,20 @@
+{
+  "name": "upperizer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "MhKh",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
+    "pm2": "^4.2.3",
+    "soap": "^0.30.0"
+  },
+  "devDependencies": {},
+  "description": "WebService For Creating UpperCase Words"
+}

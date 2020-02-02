@@ -1,0 +1,144 @@
+.dicTable {
+  width: fit-content;
+  height: fit-content;
+}
+
+.signup-form {
+  margin: 0 auto;
+  max-width: 55rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  padding: 5rem 7rem;
+  border-radius: 5px;
+}
+
+.newDic-form {
+  margin: 0 auto;
+  max-width: 55rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  padding: 5rem 7rem;
+  border-radius: 5px;
+}
+
+.newWord-form {
+  margin: 0 auto;
+  max-width: 55rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  padding: 5rem 7rem;
+  border-radius: 5px;
+}
+
+.edit__word {
+  margin: 0 auto;
+  max-width: 55rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  padding: 5rem 7rem;
+  border-radius: 5px;
+}
+
+.table_view {
+  align-items: center;
+  justify-content: center;
+  font-size: 200%;
+}
+
+.persian-align {
+  text-align: right;
+}
+
+.button-align {
+  text-align: center;
+}
+
+.td__but {
+  padding: 10px;
+}
+
+.th__but {
+  padding: 10px;
+}
+
+.btn--red {
+  background-color: #ff4039;
+  color: #fff;
+}
+.btn--red::after {
+  background-color: #ff4039;
+}
+
+.btn--blue {
+  background-color: #4a51ff;
+  color: #fff;
+}
+.btn--blue::after {
+  background-color: #4a51ff;
+}
+
+.align__table {
+  text-align: center;
+  border-spacing: 0;
+}
+
+.view__dictionaries {
+  width: 100%;
+  text-align: center;
+}
+
+.div_dictionaries {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 3px;
+}
+
+.th__tr {
+  background-color: #4ad47b;
+}
+
+.td__tr {
+  color: #344549;
+  background-color: #777;
+}
+
+.addword {
+  padding: 0 14vw;
+  width: 100%;
+}
+
+.addword a {
+  align-self: center;
+  text-align: center;
+  padding-top: 0px;
+  padding: 0 14vw;
+  width: 100%;
+}
+
+.dictionary__sections {
+  padding-top: 0px;
+}
+
+.dictionary__search {
+  padding-bottom: 3vw;
+}
+
+.hidden {
+  display: none;
+}
+
+.wordView {
+  padding-top: 8vw;
+}
+
+.searchword {
+  padding-bottom: 3vw;
+}
+
+.searchword div input {
+  margin-left: 3vw;
+}

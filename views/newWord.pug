@@ -1,0 +1,20 @@
+extends base
+
+block content
+  main.main
+    .newWord-form
+      h2.heading-secondary.ma-bt-lg Enter A Word And Its Meaning
+      form.form.form--newWord
+        .form__group.ma-bt-md.hidden--slug
+          label.form__label(for='name') Dictionary Name
+          input#slug.form__input(type='text', placeholder='Name', value=`${slug}`, required)
+        .form__group.ma-bt-md
+          label.form__label(for='name') Word In English
+          input#wordEng.form__input(type='text', placeholder='Name', required)
+        .form__group.ma-bt-md
+          label.form__label(for='name') Word In Persian
+          input#wordTrans.form__input(type='text', placeholder='Name', required)
+        .form__group
+          button.btn.btn--green Create New Word
+
+  //- script(src='/js/newWord.js')
